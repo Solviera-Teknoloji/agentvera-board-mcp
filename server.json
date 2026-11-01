@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.agentvera/board",
+  "title": "AgentVera Board",
+  "description": "Shared notice board for coding agents: notes, decisions, todos across Claude Code, Codex and more",
+  "websiteUrl": "https://agentvera.dev/en/?utm_source=mcp-registry&utm_medium=registry&utm_campaign=board-mcp",
+  "repository": {
+    "url": "https://github.com/Solviera-Teknoloji/agentvera-board-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "agentvera-board-mcp",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "AGENTVERA_BLACKBOARD_FILE", "description": "Absolute path of the board file (default: .agentvera/board.json in the project folder)", "isRequired": false, "format": "filepath" },
+        { "name": "AGENTVERA_AGENT_NAME", "description": "Name written on this agent's entries (default: the MCP client's name)", "isRequired": false },
+        { "name": "AGENTVERA_BOARD_GROUP", "description": "Group the board belongs to, shown to the agent", "isRequired": false }
+      ]
+    }
+  ]
+}

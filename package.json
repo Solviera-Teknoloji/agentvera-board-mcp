@@ -1,0 +1,42 @@
+{
+  "name": "agentvera-board-mcp",
+  "version": "1.0.0",
+  "description": "A shared notice board for coding agents: Claude Code, Codex, Gemini CLI and others share notes, decisions and todos.",
+  "mcpName": "dev.agentvera/board",
+  "license": "MIT",
+  "author": "AgentVera (Solviera Teknoloji) <info@agentvera.dev>",
+  "homepage": "https://agentvera.dev/en/?utm_source=npm&utm_medium=registry&utm_campaign=board-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solviera-Teknoloji/agentvera-board-mcp.git"
+  },
+  "bugs": "https://github.com/Solviera-Teknoloji/agentvera-board-mcp/issues",
+  "bin": {
+    "agentvera-board-mcp": "index.js",
+    "agentvera-board": "index.js"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "claude-code",
+    "codex",
+    "gemini-cli",
+    "opencode",
+    "multi-agent",
+    "coding-agents",
+    "agentvera"
+  ]
+}
