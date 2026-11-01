@@ -1,0 +1,55 @@
+{
+  "manifest_version": "0.3",
+  "name": "agentvera-board",
+  "display_name": "AgentVera Board",
+  "version": "1.0.0",
+  "description": "Shared notice board for coding agents: notes, decisions and todos across Claude Code, Codex and more.",
+  "long_description": "A shared notice board for the coding agents working in one project. Claude Code, Codex, Gemini CLI, opencode, Cursor and any other MCP client read and write the same board file, so one agent's decisions, findings and todos reach the others. Each entry is signed with the name of the client that wrote it.",
+  "author": {
+    "name": "AgentVera (Solviera Teknoloji)",
+    "email": "info@agentvera.dev",
+    "url": "https://agentvera.dev/en/?utm_source=mcpb&utm_medium=registry&utm_campaign=board-mcp"
+  },
+  "homepage": "https://agentvera.dev/en/?utm_source=mcpb&utm_medium=registry&utm_campaign=board-mcp",
+  "repository": { "type": "git", "url": "https://github.com/Solviera-Teknoloji/agentvera-board-mcp" },
+  "support": "https://github.com/Solviera-Teknoloji/agentvera-board-mcp/issues",
+  "license": "MIT",
+  "keywords": ["coding-agents", "multi-agent", "claude-code", "codex", "notes", "todos"],
+  "server": {
+    "type": "node",
+    "entry_point": "index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/index.js"],
+      "env": {
+        "AGENTVERA_BLACKBOARD_FILE": "${user_config.board_file}",
+        "AGENTVERA_AGENT_NAME": "${user_config.agent_name}"
+      }
+    }
+  },
+  "tools": [
+    { "name": "board_read", "description": "Read the board: notes, decisions, todos, findings and file/module notes." },
+    { "name": "board_post", "description": "Leave a note, decision, todo, finding or file/module note on the board." },
+    { "name": "board_update", "description": "Mark a todo done or change an entry's text." }
+  ],
+  "user_config": {
+    "board_file": {
+      "type": "string",
+      "title": "Board file",
+      "description": "Absolute path of the board file. Point every agent of a project at the same file, e.g. <project>/.agentvera/board.json.",
+      "default": "${HOME}/.agentvera/board.json",
+      "required": false
+    },
+    "agent_name": {
+      "type": "string",
+      "title": "Agent name",
+      "description": "Name written on this agent's entries. Empty: the client's own name.",
+      "default": "",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": { "node": ">=18.0.0" }
+  }
+}
